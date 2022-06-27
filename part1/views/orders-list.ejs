@@ -145,19 +145,19 @@
                       }
 
                     %>
-                    <tr>
-                      <td><%= ordersEJS[i].date_insert %></td>
-                      <td><%= ordersEJS[i].total %>€</td>
-                      <td><%= ordersEJS[i].shipping_cost %>€</td>
-                      <td class="<%= statusPayment %>"><i class="fas fa-circle"></i></td>
-                      <td><%= datePayment %></td>
-                      <td class="<%= statusShipment %>"><i class="fas fa-circle"></i></td>
-                      <td><%= dateShipment %></td>
-                      <td><%= ordersEJS[i].delivery_address %></td>
-                      <td><%= ordersEJS[i].delivery_city %></td>
-                      <td><%= ordersEJS[i].delivery_zipcode %></td>
-                      <td><a href="/order-page?id=<%= ordersEJS[i].id %>">voir</a></td>
-                    </tr>
+                      <tr>
+                        <td><%= ordersEJS[i].date_insert %></td>
+                        <td><%= ordersEJS[i].total %>€</td>
+                        <td><%= ordersEJS[i].shipping_cost %>€</td>
+                        <td class="<%= statusPayment %>"><i class="fas fa-circle"></i></td>
+                        <td><%= datePayment %></td>
+                        <td class="<%= statusShipment %>"><i class="fas fa-circle"></i></td>
+                        <td><%= dateShipment %></td>
+                        <td><%= ordersEJS[i].delivery_address %></td>
+                        <td><%= ordersEJS[i].delivery_city %></td>
+                        <td><%= ordersEJS[i].delivery_zipcode %></td>
+                        <td><a href="/order-page?id=<%= ordersEJS[i].id %>">voir</a></td>
+                      </tr>
                   <% } %>
 
                   </tbody>
