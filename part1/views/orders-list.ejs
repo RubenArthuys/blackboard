@@ -119,45 +119,45 @@
 
                   <% for(var i=0; i<ordersEJS.length; i++) {
                       
-                      //on écrit en variables ce qu'on va avoir besoin de changer//
-                      let statusPayment = "";
-                      let datePayment = "";
-                      let statusShipment = "status-success";
-                      let dateShipment = "";
+                        //on écrit en variables ce qu'on va avoir besoin de changer//
+                        let statusPayment = "";
+                        let datePayment = "";
+                        let statusShipment = "status-success";
+                        let dateShipment = "";
 
-                      if(ordersEJS[i].status_payment == "validated") {
-                        statusPayment = "status-success"
-                        datePayment = ordersEJS[i].date_payment
-                      } else if (ordersEJS[i].status_payment == "waiting") {
-                        statusPayment = "status-secondary"
-                        datePayment = "Payment waiting >_<"
-                      } else {
-                        statusPayment = "status-danger"
-                        datePayment = "Payment refused :'("
-                      }
+                        if(ordersEJS[i].status_payment == "validated") {
+                          statusPayment = "status-success"
+                          datePayment = ordersEJS[i].date_payment
+                        } else if (ordersEJS[i].status_payment == "waiting") {
+                          statusPayment = "status-secondary"
+                          datePayment = "Payment waiting >_<"
+                        } else {
+                          statusPayment = "status-danger"
+                          datePayment = "Payment refused :'("
+                        }
 
 
-                      if(ordersEJS[i].status_shipment == false) {
-                        statusShipment = "status-danger"
-                        dateShipment = "Waiting to send"
-                      } else {
-                        dateShipment = ordersEJS[i].date_shipment
-                      }
+                        if(ordersEJS[i].status_shipment == false) {
+                          statusShipment = "status-danger"
+                          dateShipment = "Waiting to send"
+                        } else {
+                          dateShipment = ordersEJS[i].date_shipment
+                        }
 
-                    %>
-                      <tr>
-                        <td><%= ordersEJS[i].date_insert %></td>
-                        <td><%= ordersEJS[i].total %>€</td>
-                        <td><%= ordersEJS[i].shipping_cost %>€</td>
-                        <td class="<%= statusPayment %>"><i class="fas fa-circle"></i></td>
-                        <td><%= datePayment %></td>
-                        <td class="<%= statusShipment %>"><i class="fas fa-circle"></i></td>
-                        <td><%= dateShipment %></td>
-                        <td><%= ordersEJS[i].delivery_address %></td>
-                        <td><%= ordersEJS[i].delivery_city %></td>
-                        <td><%= ordersEJS[i].delivery_zipcode %></td>
-                        <td><a href="/order-page?id=<%= ordersEJS[i].id %>">voir</a></td>
-                      </tr>
+                      %>
+                        <tr>
+                          <td><%= ordersEJS[i].date_insert %></td>
+                          <td><%= ordersEJS[i].total %>€</td>
+                          <td><%= ordersEJS[i].shipping_cost %>€</td>
+                          <td class="<%= statusPayment %>"><i class="fas fa-circle"></i></td>
+                          <td><%= datePayment %></td>
+                          <td class="<%= statusShipment %>"><i class="fas fa-circle"></i></td>
+                          <td><%= dateShipment %></td>
+                          <td><%= ordersEJS[i].delivery_address %></td>
+                          <td><%= ordersEJS[i].delivery_city %></td>
+                          <td><%= ordersEJS[i].delivery_zipcode %></td>
+                          <td><a href="/order-page?id=<%= ordersEJS[i].id %>">voir</a></td>
+                        </tr>
                   <% } %>
 
                   </tbody>
