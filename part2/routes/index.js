@@ -9,8 +9,10 @@ var userModel = require('../models/users');
 // Home page
 router.get('/', async function(req, res, next) {
 
+  //Dashboard stock dynamique
   var articlesZero = await articlesModel.find({ stock : 0 });
 
+  //Dashboard messages de l'admin
   var admin = await userModel.findById('5c52e4efaa4beef85aad5e52')
   
   var messages = admin.messages
@@ -22,6 +24,7 @@ router.get('/', async function(req, res, next) {
   }
   // console.log(unreadMessages);
 
+  //Dashboard tasks de l'admin
   var tasks = admin.tasks
   let tasksUndone = 0
   for(var i=0; i<tasks.length; i++) {
