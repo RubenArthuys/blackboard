@@ -72,6 +72,7 @@ var pieDiv = new Chart(pieDiv, {
 //Sales figures
 var lineDiv = document.getElementById('linechart');
 
+   //on parse (transforme une string en objet) la data envoyé, car c'était un objet dans index.js, qu'il a fallu faire passer dans charts.ejs en string, grâce à JSON.stringify(). Donc là on re-transforme cette string de charts.ejs en objet.
 var data = JSON.parse(lineDiv.dataset.sales)
    // console.log(data)
 
@@ -87,11 +88,11 @@ for(var i=0; i<data.length; i++) {
    //new Date() est une fonction qui peut accepter des paramètres.
    
    var month = date.toLocaleString('en-GB', { month : 'long' })
-   //Doc: toLocaleString() renvoie une chaine de caractères, représentant la date selon les settings locale du pays.
+   //Doc: toLocaleString() renvoie une chaine de caractères, représentant la date selon les settings locale de l'endroit où on est.
    //{month : 'long'} = écriture longue ('short' = écriture courte)
    monthLabels.push(month)
 
-   //Total de chaque mois. (obtenu grâce à l'aggregation dans index.js)
+   //Somme total de chaque mois. (obtenu grâce à l'aggregation dans index.js)
    salesResults.push(data[i].totalSales)
 }
 
